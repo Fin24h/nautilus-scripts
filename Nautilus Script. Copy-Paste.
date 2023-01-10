@@ -1,0 +1,22 @@
+
+#!/bin/sh
+
+# Copy the file name to the clipboard.
+# Pasting doesn't print an annoying extra line of text. (wl-copy)
+# Wayland, Ubuntu. (Tested on ubuntu 22.10 OS)
+
+filepath=$NAUTILUS_SCRIPT_SELECTED_FILE_PATHS
+name=${filepath##*/}
+wl-copy $name
+
+#################################################################
+
+#!/bin/sh
+
+# Copy the file path to the clipboard.
+# Pasting doesn't print an annoying extra line of text. (wl-copy)
+# Wayland, Ubuntu. (Tested on ubuntu 22.10 OS)
+
+filepath=$NAUTILUS_SCRIPT_SELECTED_FILE_PATHS
+name=${filepath#*/#}
+wl-copy $name
